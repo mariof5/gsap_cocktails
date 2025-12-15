@@ -17,24 +17,13 @@ const Cocktails = () => {
 
             }
         })
-         const parallaxTimelineR = gsap.timeline({
-            scrollTrigger:{
-                trigger: '#cocktails',
-                start: 'top 30%',
-                end: 'bottom 30%',
-                scrub: true,
 
-            }
-        })
         parallaxTimeline
         .from('#c-left-leaf', {
             x: -100, y: 100
-        })
-
-        parallaxTimelineR
-          .from('#c-right-leaf', {
+        }).from('#c-right-leaf', {
             x: 50, y: 200
-        })
+        }, '-=0.5')
     })
 
   return (

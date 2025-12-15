@@ -14,6 +14,22 @@ const Menu = () => {
     gsap.fromTo('.cocktail img', {opacity: 0, xPercent: -100}, {xPercent: 0, opacity: 1, duration: 1, duration: 1, ease: 'power1.inOut'})
     gsap.fromTo('.details h2', { yPercent: 100, opacity:0 }, {yPercent: 0, opacity: 100, ease: 'power1.inOut'})
     gsap.fromTo('.details p', { yPercent: 100, opacity:0 }, {yPercent: 0, opacity: 100, ease: 'power1.inOut'})
+        const parallaxTimeline = gsap.timeline({
+            scrollTrigger:{
+                trigger: '#menu',
+                start: 'top center',
+                end: 'bottom 30%',
+                scrub: true,
+
+            }
+        })
+
+        parallaxTimeline
+        .from('#m-left-leaf', {
+            x: -100, y: 100
+        }).from('#m-right-leaf', {
+            x: 50, y: 200
+        }, '-=0.5')
   }, [currentIndex])
  
   const totalCocktails = allCocktails.length;
